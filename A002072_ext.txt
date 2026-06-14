@@ -1,0 +1,103 @@
+(base) ken@Mr-Mac A002072_extender % python3 A002072_Solver_10.py --start_r 16 --end_r 35 --expo_margin 6
+[+] A002072_Solver v10
+[+] gmpy2: True   cypari2: False
+[+] workers=10  block_log2=20  outdir=A002072_Solver_runs
+[+] cap mode: adaptive (expo_margin=6)
+[+] r range: 16..35
+[+] v10: in-worker block generation + pool architecture (v9 math unchanged)
+
+  [adaptive] r=16: anchor=1,109,496,723,125 [A002072_KNOWN[15]] -> max_m = 10^19  (floor(log10)+6+1)
+[>] r=16  p_r=53  max_m=10^19
+    last_smooth_m = 1,453,579,866,024
+    runtime       = 0.01 min  complete=True  MATCHES OEIS
+
+  [adaptive] r=17: anchor=1,453,579,866,024 [A002072_KNOWN[16]] -> max_m = 10^19  (floor(log10)+6+1)
+[>] r=17  p_r=59  max_m=10^19
+    last_smooth_m = 20,628,591,204,480
+    runtime       = 0.02 min  complete=True  MATCHES OEIS
+
+  [adaptive] r=18: anchor=20,628,591,204,480 [A002072_KNOWN[17]] -> max_m = 10^20  (floor(log10)+6+1)
+[>] r=18  p_r=61  max_m=10^20
+    last_smooth_m = 31,887,350,832,896
+    runtime       = 0.05 min  complete=True  MATCHES OEIS
+
+  [adaptive] r=19: anchor=31,887,350,832,896 [A002072_KNOWN[18]] -> max_m = 10^20  (floor(log10)+6+1)
+[>] r=19  p_r=67  max_m=10^20
+    last_smooth_m = 31,887,350,832,896
+    runtime       = 0.09 min  complete=True  MATCHES OEIS
+
+  [adaptive] r=20: anchor=31,887,350,832,896 [A002072_KNOWN[19]] -> max_m = 10^20  (floor(log10)+6+1)
+[>] r=20  p_r=71  max_m=10^20
+    last_smooth_m = 119,089,041,053,696
+    runtime       = 0.18 min  complete=True  MATCHES OEIS
+
+  [adaptive] r=21: anchor=119,089,041,053,696 [A002072_KNOWN[20]] -> max_m = 10^21  (floor(log10)+6+1)
+[>] r=21  p_r=73  max_m=10^21
+    last_smooth_m = 2,286,831,727,304,144
+    runtime       = 0.37 min  complete=True  MATCHES OEIS
+
+  [adaptive] r=22: anchor=2,286,831,727,304,144 [A002072_KNOWN[21]] -> max_m = 10^22  (floor(log10)+6+1)
+[>] r=22  p_r=79  max_m=10^22
+    last_smooth_m = 9,591,468,737,351,909,375
+    runtime       = 0.75 min  complete=True  MATCHES OEIS
+
+  [adaptive] r=23: anchor=9,591,468,737,351,909,375 [A002072_KNOWN[22]] -> max_m = 10^25  (floor(log10)+6+1)
+[>] r=23  p_r=83  max_m=10^25
+    last_smooth_m = 9,591,468,737,351,909,375
+    runtime       = 1.65 min  complete=True  MATCHES OEIS
+
+  [adaptive] r=24: anchor=9,591,468,737,351,909,375 [A002072_KNOWN[23]] -> max_m = 10^25  (floor(log10)+6+1)
+[>] r=24  p_r=89  max_m=10^25
+    last_smooth_m = 9,591,468,737,351,909,375
+    runtime       = 3.35 min  complete=True  MATCHES OEIS
+
+  [adaptive] r=25: anchor=9,591,468,737,351,909,375 [A002072_KNOWN[24]] -> max_m = 10^25  (floor(log10)+6+1)
+[>] r=25  p_r=97  max_m=10^25
+    last_smooth_m = 9,591,468,737,351,909,375
+    runtime       = 6.48 min  complete=True  MATCHES OEIS
+
+  [adaptive] r=26: anchor=9,591,468,737,351,909,375 [A002072_KNOWN[25]] -> max_m = 10^25  (floor(log10)+6+1)
+[>] r=26  p_r=101  max_m=10^25
+    last_smooth_m = 9,591,468,737,351,909,375
+    runtime       = 12.68 min  complete=True  MATCHES OEIS
+
+  [adaptive] r=27: anchor=9,591,468,737,351,909,375 [A002072_KNOWN[26]] -> max_m = 10^25  (floor(log10)+6+1)
+[>] r=27  p_r=103  max_m=10^25
+    last_smooth_m = 19,316,158,377,073,923,834,000
+    runtime       = 24.79 min  complete=True  MATCHES OEIS
+
+  [adaptive] r=28: anchor=19,316,158,377,073,923,834,000 [A002072_KNOWN[27]] -> max_m = 10^29  (floor(log10)+6+1)
+[>] r=28  p_r=107  max_m=10^29
+    last_smooth_m = 19,316,158,377,073,923,834,000
+    runtime       = 55.72 min  complete=True  NEW RESULT
+
+  [adaptive] r=29: anchor=19,316,158,377,073,923,834,000 [smooth_r28.json] → max_m = 10^29  (floor(log10)+6+1)
+[>] r=29  p_r=109  max_m=10^29
+    last_smooth_m = 19,316,158,377,073,923,834,000
+    runtime       = 80.63 min  complete=True  NEW RESULT
+
+  [adaptive] r=30: anchor=19,316,158,377,073,923,834,000 [smooth_r29.json] → max_m = 10^29  (floor(log10)+6+1)
+[>] r=30  p_r=113  max_m=10^29
+    last_smooth_m = 19,316,158,377,073,923,834,000
+    runtime       = 155.51 min  complete=True  NEW RESULT
+
+  [adaptive] r=31: anchor=19,316,158,377,073,923,834,000 [smooth_r30.json] → max_m = 10^29  (floor(log10)+6+1)
+[>] r=31  p_r=127  max_m=10^29
+    last_smooth_m = 19,316,158,377,073,923,834,000
+    runtime       = 303.25 min  complete=True  NEW RESULT
+
+  [adaptive] r=32: anchor=19,316,158,377,073,923,834,000 [smooth_r31.json] → max_m = 10^29  (floor(log10)+6+1)
+[>] r=32  p_r=131  max_m=10^29
+    last_smooth_m = 19,316,158,377,073,923,834,000
+    runtime       = 655.93 min  complete=True  NEW RESULT
+
+  [adaptive] r=33: anchor=19,316,158,377,073,923,834,000 [smooth_r32.json] → max_m = 10^29  (floor(log10)+6+1)
+[>] r=33  p_r=137  max_m=10^29
+    last_smooth_m = 124,225,935,845,233,319,439,173
+    runtime       = 1164.85 min  complete=True  NEW RESULT
+
+  [adaptive] r=34: anchor=124,225,935,845,233,319,439,173 [smooth_r33.json] → max_m = 10^30  (floor(log10)+6+1)
+[>] r=34  p_r=139  max_m=10^30
+    last_smooth_m = 124,225,935,845,233,319,439,173
+    runtime       = 2393.95 min  complete=True  NEW RESULT
+
