@@ -8,7 +8,7 @@ m, m+1 with $P^+(m(m+1)) <= p_r$.
 
 The solver is part of a broader project on **prime-complete products of two consecutive integers**, where a product $m(m+1)$ is prime-complete of order $r$ when
 
-$rad(m(m+1)) = p_r$#.
+$rad(m(m+1)) = p_r$# = $P_r$.
 
 The A002072 values provide the smooth ceiling $L_r$; if a prime-complete product of order $r$ exists, then necessarily $m <= L_r$.
 
