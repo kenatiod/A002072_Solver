@@ -28,7 +28,7 @@ The latest run archive extends A002072 beyond the previously known OEIS range. I
 A002072(37) = 27129807647978258459761875
 ```
 
-for $p_37 = 157$.
+for $p_{37} = 157$.
 
 Selected recent values:
 
