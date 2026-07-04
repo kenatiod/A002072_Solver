@@ -1,0 +1,39 @@
+{
+  "a002072_known_value": 1,
+  "anchor_source": "unlimited (no prior JSON for r=0)",
+  "anchor_value": 0,
+  "batch_size": 1024,
+  "effective_max_m_expo": 0,
+  "end_utc": "2026-06-10T02:09:07+00:00",
+  "error_samples": [],
+  "expo_margin": 6,
+  "l2_iteration_depth": 12,
+  "last_smooth_m": 1,
+  "last_smooth_m_plus1": 2,
+  "lehmer_L_base": 6,
+  "n_batches": 1,
+  "n_discriminant_errors": 0,
+  "n_discriminants": 1,
+  "n_pell_cutoffs": 0,
+  "n_prefiltered_subsets": 0,
+  "n_prime_complete_hits": 1,
+  "n_smooth_pairs_found": 1,
+  "n_solutions_tried": 12,
+  "n_subsets_total": 1,
+  "n_y1_gate_skips": 0,
+  "p_r": 2,
+  "prime_complete_hits": [
+    1
+  ],
+  "primes": [
+    2
+  ],
+  "program": "A002072_Solver v9",
+  "r": 1,
+  "runtime_seconds": 0.116,
+  "search_complete": true,
+  "start_utc": "2026-06-10T02:09:07+00:00",
+  "subset_accounting_ok": true,
+  "workers": 10,
+  "xcheck_known_matches": true
+}

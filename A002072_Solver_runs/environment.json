@@ -1,0 +1,13 @@
+{
+  "command_line": "A002072_Solver_10.py --start_r 36 --end_r 37 --expo_margin 6",
+  "cypari2": "True",
+  "git_commit": "",
+  "gmpy2": "True",
+  "gp_path": "gp",
+  "gp_version": "[2, 17, 3]",
+  "platform": "macOS-26.4-arm64-arm-64bit",
+  "program": "A002072_Solver v10",
+  "python_version": "3.12.7 | packaged by conda-forge | (main, Oct  4 2024, 15:57:01) [Clang 17.0.6 ]",
+  "script_path": "/Users/ken/Desktop/Number-Research/A002072_extender/A002072_Solver_10.py",
+  "script_sha256": "cca72b47abfb9bcee07037b743554d58a776f1122e5761fcbc4f61d1ec0baf15"
+}
