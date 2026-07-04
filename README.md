@@ -65,7 +65,7 @@ The relevant identities are:
 $m     = D y^2$,
 $m + 1 = x^2$,
 
-and, for odd `$x$`, the half-solution branch
+and, for odd $x$, the half-solution branch
 
 $m     = (x - 1)/2$,
 $m + 1 = (x + 1)/2$.
