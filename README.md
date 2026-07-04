@@ -48,9 +48,9 @@ Selected recent values:
 
 The $r=37$ result is especially useful for the prime-complete project because
 
-$L_37(L_37+1)$
+$L_{37}(L_{37}+1)$
 
-jumps across multiple primorial intervals while still remaining far below $P_37 = p_37$#.
+jumps across multiple primorial intervals while still remaining far below $P_{37} = p_{37}$#.
 
 ---
 
