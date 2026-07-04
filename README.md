@@ -185,7 +185,7 @@ python3 A002072_Solver.py --start_r 34 --end_r 37 --expo_margin 6 --outdir A0020
 
 With `--expo_margin M`, the solver uses the previous completed value as an anchor and sets
 
-$max_m = 10^{(floor(log10(anchor)) + M + 1)}$.
+$max_m = 10^{(\floor(\log10(anchor)) + M + 1)}$.
 
 For example, with `--expo_margin 6`, each new run searches several orders of magnitude beyond the previous certified A002072 value.
 
