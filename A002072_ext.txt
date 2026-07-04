@@ -101,3 +101,19 @@
     last_smooth_m = 124,225,935,845,233,319,439,173
     runtime       = 2393.95 min  complete=True  NEW RESULT
 
+  [adaptive] r=35: anchor=124,225,935,845,233,319,439,173 [smooth_r34.json] -> max_m = 10^30  (floor(log10)+6+1)
+[>] r=35  p_r=149  max_m=10^30
+    last_smooth_m = 124,225,935,845,233,319,439,173
+    runtime       = 4096.26 min  complete=True  NEW RESULT
+    
+  [adaptive] r=36: anchor=124,225,935,845,233,319,439,173 [smooth_r35.json] -> max_m = 10^30  (floor(log10)+6+1)
+[>] r=36  p_r=151  max_m=10^30
+    last_smooth_m = 124,225,935,845,233,319,439,173
+    runtime       = 7855.74 min  complete=True  NEW RESULT
+
+  [adaptive] r=37: anchor=124,225,935,845,233,319,439,173 [smooth_r36.json] -> max_m = 10^30  (floor(log10)+6+1)
+[>] r=37  p_r=157  max_m=10^30
+  r=37 p_r=157 discriminants_run=137,438,953,465 (+6 pre-filtered by D>(2*max_m+1)^2) cutoffs=137,438,308,503 gate_skips=526,767 max_m=10^30 workers=10 blocks=131072 L2=158
+    last_smooth_m = 27,129,807,647,978,258,459,761,875
+    runtime       = 15209.18 min  complete=True  NEW RESULT
+
