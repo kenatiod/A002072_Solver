@@ -4,15 +4,11 @@ Certified computational extension tools for [OEIS A002072](https://oeis.org/A002
 
 Equivalently, for each order $r$, this program searches for the largest consecutive smooth pair
 
-```text
 m, m+1 with $P^+(m(m+1)) <= p_r$.
-```
 
 The solver is part of a broader project on **prime-complete products of two consecutive integers**, where a product $m(m+1)$ is prime-complete of order $r$ when
 
-```text
 $rad(m(m+1)) = p_r\#$.
-```
 
 The A002072 values provide the smooth ceiling $L_r$; if a prime-complete product of order $r$ exists, then necessarily $m <= L_r$.
 
@@ -36,7 +32,7 @@ for $p_37 = 157$.
 
 Selected recent values:
 
-| r | p_r | A002072(r) |
+| r | $p_r$ | A002072(r) |
 |---:|---:|---:|
 | 27 | 103 | 19316158377073923834000 |
 | 28 | 107 | 19316158377073923834000 |
@@ -52,9 +48,7 @@ Selected recent values:
 
 The $r=37$ result is especially useful for the prime-complete project because
 
-```text
 $L_37(L_37+1)$
-```
 
 jumps across multiple primorial intervals while still remaining far below $P_37 = p_37\#$.
 
