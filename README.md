@@ -8,7 +8,7 @@ m, m+1 with $P^+(m(m+1)) <= p_r$.
 
 The solver is part of a broader project on **prime-complete products of two consecutive integers**, where a product $m(m+1)$ is prime-complete of order $r$ when
 
-$rad(m(m+1)) = p_r\#$.
+$rad(m(m+1)) = p_r$#.
 
 The A002072 values provide the smooth ceiling $L_r$; if a prime-complete product of order $r$ exists, then necessarily $m <= L_r$.
 
@@ -50,7 +50,7 @@ The $r=37$ result is especially useful for the prime-complete project because
 
 $L_37(L_37+1)$
 
-jumps across multiple primorial intervals while still remaining far below $P_37 = p_37\#$.
+jumps across multiple primorial intervals while still remaining far below $P_37 = p_37$#.
 
 ---
 
@@ -60,31 +60,23 @@ The solver uses the classical Størmer--Lehmer reduction from consecutive smooth
 
 For squarefree $D$ supported on the first $r$ primes, solve
 
-```text
 $x^2 - D y^2 = 1$.
-```
 
 The relevant identities are:
 
-```text
 $m     = D y^2$,
 $m + 1 = x^2$,
-```
 
 and, for odd `$x$`, the half-solution branch
 
-```text
 $m     = (x - 1)/2$,
 $m + 1 = (x + 1)/2$.
-```
 
-The implementation iterates Pell solutions on each squarefree discriminant $D | p_r\#$, checks smoothness against the first $r$ primes, records the largest smooth pair found, and separately records prime-complete hits when the distinct prime support has size exactly $r$.
+The implementation iterates Pell solutions on each squarefree discriminant $D | p_r$#, checks smoothness against the first $r$ primes, records the largest smooth pair found, and separately records prime-complete hits when the distinct prime support has size exactly $r$.
 
 The code also uses the Lucas divisibility gate:
 
-```text
 $y_1 | y_n$.
-```
 
 Therefore, if the fundamental $y_1$ is not $p_r$-smooth, the entire Pell branch can be skipped.
 
@@ -195,9 +187,7 @@ python3 A002072_Solver.py --start_r 34 --end_r 37 --expo_margin 6 --outdir A0020
 
 With `--expo_margin M`, the solver uses the previous completed value as an anchor and sets
 
-```text
 $max_m = 10^(floor(log10(anchor)) + M + 1)$.
-```
 
 For example, with `--expo_margin 6`, each new run searches several orders of magnitude beyond the previous certified A002072 value.
 
@@ -245,9 +235,7 @@ which records the script hash, command line, Python version, platform, optional 
 
 For every order $r$, the solver checks exact subset accounting:
 
-```text
 n_discriminants + n_prefiltered_subsets == $2^r - 1$.
-```
 
 The JSON field
 
@@ -346,15 +334,11 @@ find A002072_Solver_runs -type f -print0 | sort -z | xargs -0 shasum -a 256 > SH
 
 Let
 
-```text
 $L_r$ = A002072(r).
-```
 
 If $m(m+1)$ is prime-complete of order $r$, then both $m$ and $m+1$ are $p_r$-smooth, so
 
-```text
 $m <= L_r$.
-```
 
 Thus A002072 provides a smooth ceiling for possible prime-complete products.
 
