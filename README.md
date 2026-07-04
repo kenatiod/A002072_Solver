@@ -1,20 +1,20 @@
 # A002072 Solver
 
-Certified computational extension tools for [OEIS A002072](https://oeis.org/A002072): the largest integer `m` such that `m` and `m+1` are both `p_r`-smooth, where `p_r` is the `r`-th prime.
+Certified computational extension tools for [OEIS A002072](https://oeis.org/A002072): the largest integer $m$ such that $m$ and $m+1$ are both $p_r$-smooth, where $p_r$ is the $r$-th prime.
 
-Equivalently, for each order `r`, this program searches for the largest consecutive smooth pair
-
-```text
-m, m+1 with P^+(m(m+1)) <= p_r.
-```
-
-The solver is part of a broader project on **prime-complete products of two consecutive integers**, where a product `m(m+1)` is prime-complete of order `r` when
+Equivalently, for each order $r$, this program searches for the largest consecutive smooth pair
 
 ```text
-rad(m(m+1)) = p_r#.
+m, m+1 with $P^+(m(m+1)) <= p_r$.
 ```
 
-The A002072 values provide the smooth ceiling `L_r`; if a prime-complete product of order `r` exists, then necessarily `m <= L_r`.
+The solver is part of a broader project on **prime-complete products of two consecutive integers**, where a product $m(m+1)$ is prime-complete of order $r$ when
+
+```text
+$rad(m(m+1)) = p_r\#$.
+```
+
+The A002072 values provide the smooth ceiling $L_r$; if a prime-complete product of order $r$ exists, then necessarily $m <= L_r$.
 
 ---
 
@@ -32,7 +32,7 @@ The latest run archive extends A002072 beyond the previously known OEIS range. I
 A002072(37) = 27129807647978258459761875
 ```
 
-for `p_37 = 157`.
+for $p_37 = 157$.
 
 Selected recent values:
 
@@ -50,13 +50,13 @@ Selected recent values:
 | 36 | 151 | 124225935845233319439173 |
 | 37 | 157 | 27129807647978258459761875 |
 
-The `r=37` result is especially useful for the prime-complete project because
+The $r=37$ result is especially useful for the prime-complete project because
 
 ```text
-L_37(L_37+1)
+$L_37(L_37+1)$
 ```
 
-jumps across multiple primorial intervals while still remaining far below `P_37 = p_37#`.
+jumps across multiple primorial intervals while still remaining far below $P_37 = p_37\#$.
 
 ---
 
@@ -64,47 +64,47 @@ jumps across multiple primorial intervals while still remaining far below `P_37 
 
 The solver uses the classical Størmer--Lehmer reduction from consecutive smooth integers to Pell equations.
 
-For squarefree `D` supported on the first `r` primes, solve
+For squarefree $D$ supported on the first $r$ primes, solve
 
 ```text
-x^2 - D y^2 = 1.
+$x^2 - D y^2 = 1$.
 ```
 
 The relevant identities are:
 
 ```text
-m     = D y^2,
-m + 1 = x^2,
+$m     = D y^2$,
+$m + 1 = x^2$,
 ```
 
-and, for odd `x`, the half-solution branch
+and, for odd `$x$`, the half-solution branch
 
 ```text
-m     = (x - 1)/2,
-m + 1 = (x + 1)/2.
+$m     = (x - 1)/2$,
+$m + 1 = (x + 1)/2$.
 ```
 
-The implementation iterates Pell solutions on each squarefree discriminant `D | p_r#`, checks smoothness against the first `r` primes, records the largest smooth pair found, and separately records prime-complete hits when the distinct prime support has size exactly `r`.
+The implementation iterates Pell solutions on each squarefree discriminant $D | p_r\#$, checks smoothness against the first $r$ primes, records the largest smooth pair found, and separately records prime-complete hits when the distinct prime support has size exactly $r$.
 
 The code also uses the Lucas divisibility gate:
 
 ```text
-y_1 | y_n.
+$y_1 | y_n$.
 ```
 
-Therefore, if the fundamental `y_1` is not `p_r`-smooth, the entire Pell branch can be skipped.
+Therefore, if the fundamental $y_1$ is not $p_r$-smooth, the entire Pell branch can be skipped.
 
 ---
 
 ## Version 10 overview
 
-`A002072_Solver.py` version 10 keeps the mathematics of version 9 unchanged and reworks the task architecture for large `r`.
+`A002072_Solver.py` version 10 keeps the mathematics of version 9 unchanged and reworks the task architecture for large $r$.
 
-The major change is **in-worker discriminant generation**. Instead of generating every squarefree subset product `D` in a feeder process and shipping large batches to workers, version 10 partitions the subset space by the membership pattern of the top `H` primes. Each worker receives a high-prime mask and performs the pruned low-prime DFS locally.
+The major change is **in-worker discriminant generation**. Instead of generating every squarefree subset product $D$ in a feeder process and shipping large batches to workers, version 10 partitions the subset space by the membership pattern of the top $H$ primes. Each worker receives a high-prime mask and performs the pruned low-prime DFS locally.
 
 This reduces interprocess communication from many large discriminant batches to a small integer task plus one aggregate result.
 
-Version 10 also replaces the earlier hand-rolled queue architecture with `multiprocessing.Pool`, preserves exact subset accounting, and writes a JSON audit trail for every completed `r`.
+Version 10 also replaces the earlier hand-rolled queue architecture with `multiprocessing.Pool`, preserves exact subset accounting, and writes a JSON audit trail for every completed $r$.
 
 ---
 
@@ -202,7 +202,7 @@ python3 A002072_Solver.py --start_r 34 --end_r 37 --expo_margin 6 --outdir A0020
 With `--expo_margin M`, the solver uses the previous completed value as an anchor and sets
 
 ```text
-max_m = 10^(floor(log10(anchor)) + M + 1).
+$max_m = 10^(floor(log10(anchor)) + M + 1)$.
 ```
 
 For example, with `--expo_margin 6`, each new run searches several orders of magnitude beyond the previous certified A002072 value.
@@ -223,14 +223,14 @@ A002072_Solver_runs/smooth_rXX.json
 
 Each JSON output contains:
 
-- `r`, `p_r`, and the prime list
+- $r$, $p_r$, and the prime list
 - `last_smooth_m`
 - `last_smooth_m_plus1`
 - adaptive cap metadata
 - `search_complete`
 - subset/discriminant accounting
 - Pell cutoffs
-- `y_1` gate skips
+- $y_1$ gate skips
 - number of Pell solution iterations tried
 - number of smooth-pair discriminants found
 - prime-complete hits, if any
@@ -249,10 +249,10 @@ which records the script hash, command line, Python version, platform, optional 
 
 ## Certification checks
 
-For every order `r`, the solver checks exact subset accounting:
+For every order $r$, the solver checks exact subset accounting:
 
 ```text
-n_discriminants + n_prefiltered_subsets == 2^r - 1.
+n_discriminants + n_prefiltered_subsets == $2^r - 1$.
 ```
 
 The JSON field
@@ -279,7 +279,7 @@ For orders already known to OEIS, the solver cross-checks the computed value aga
 
 In addition to computing A002072 values, the solver checks for prime-complete products.
 
-A smooth pair is recorded as prime-complete when the number of distinct prime factors across `m` and `m+1` is exactly `r`:
+A smooth pair is recorded as prime-complete when the number of distinct prime factors across $m$ and $m+1$ is exactly $r$:
 
 ```text
 omega(m) + omega(m+1) == r.
@@ -353,13 +353,13 @@ find A002072_Solver_runs -type f -print0 | sort -z | xargs -0 shasum -a 256 > SH
 Let
 
 ```text
-L_r = A002072(r).
+$L_r$ = A002072(r).
 ```
 
-If `m(m+1)` is prime-complete of order `r`, then both `m` and `m+1` are `p_r`-smooth, so
+If $m(m+1)$ is prime-complete of order $r$, then both $m$ and $m+1$ are $p_r$-smooth, so
 
 ```text
-m <= L_r.
+$m <= L_r$.
 ```
 
 Thus A002072 provides a smooth ceiling for possible prime-complete products.
