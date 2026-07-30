@@ -1,5 +1,5 @@
 At r=14 the A002072 values become less than the A118478 values. All values of A141399
-are restricted to the rage where A002072 >= A118478.
+are restricted to the range where A002072 >= A118478.
 
 +--+---------+------------------------------------+---------------------+-----------------------------------+
 |r | A118478 |            A141399                 | A002072 >= A118478  |        A002072 < A118478          |
